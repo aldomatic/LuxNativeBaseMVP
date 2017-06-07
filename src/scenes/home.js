@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native'
-import { Container, Content, Body, Title, Button, Header, Icon, Right, Left, Drawer } from 'native-base';
+import { Container, Content, Body, Title, Button, Header, Icon, Right, Left, Drawer, StyleProvider } from 'native-base';
 import Menu from '../components/menu';
+import getTheme from '../../native-base-theme/components';
 
 export default class Home extends React.Component{
 
-  static navigationOptions = ({ navigation }) => ({
-    headerTintColor: 'white',
-    title: 'Home',
-    headerTitleStyle:{
-      color: 'white'
-    },
-    headerStyle: {
-     backgroundColor:'#D20A4B'
-   }
- });
+ //  static navigationOptions = ({ navigation }) => ({
+ //    headerTintColor: 'white',
+ //    title: 'Home',
+ //    headerTitleStyle:{
+ //      color: 'white'
+ //    },
+ //    headerStyle: {
+ //     backgroundColor:'#D20A4B'
+ //   }
+ // });
 
   constructor(props){
     super(props);
@@ -29,6 +30,7 @@ export default class Home extends React.Component{
       //   this.drawer._root.open()
       // };
     return (
+      <StyleProvider style={getTheme()}>
       <Container>
         <Drawer
              ref={(ref) => { this.drawer = ref; }}
@@ -41,11 +43,15 @@ export default class Home extends React.Component{
              <Button transparent onPress={() => {
                this.props.navigation.navigate("DrawerOpen")
              }}>
-                 <Text>Menu</Text>
+                 <Text style={{
+                   color:'#E3DBCE',
+                   fontSize: 16,
+                   fontWeight:'bold'
+                 }}>Menu</Text>
              </Button>
              </Left>
                <Body>
-                 <Title>Home</Title>
+                 <Title>HOME</Title>
                </Body>
                <Right>
 
@@ -53,6 +59,7 @@ export default class Home extends React.Component{
              </Header>
          </Drawer>
       </Container>
+      </StyleProvider>
     //   <View style={{
     //     flex: 1,
     //     flexDirection: 'column',

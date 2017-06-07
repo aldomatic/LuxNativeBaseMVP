@@ -36,7 +36,11 @@ export default class CameraScene extends React.Component{
           <Button transparent onPress={() => {
             this.props.navigation.navigate("DrawerOpen")
           }}>
-              <Text>Menu</Text>
+          <Text style={{
+            color:'#E3DBCE',
+            fontSize: 16,
+            fontWeight:'bold'
+          }}>Menu</Text>
           </Button>
           </Left>
             <Body>
