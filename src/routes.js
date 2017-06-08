@@ -8,12 +8,14 @@ import {
 
 import Home from './scenes/home';
 import CameraScene from './scenes/camera';
+import Tour from './scenes/tour';
 import Menu from './components/menu';
 
 const routes = DrawerNavigator(
 {
   Home: {screen: Home},
-  Camera: {screen: CameraScene}
+  Camera: {screen: CameraScene},
+  Tour: {screen: Tour},
 },
 {
   contentComponent: (props) => {
